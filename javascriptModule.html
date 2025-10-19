@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Storage Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Moment.js library for date manipulation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  </head>
+  <body>
+    <h1>Food Storage Tracker</h1>
+
+    <h4>Track your food items and their expiration dates</h4>
+    <!-- input form for creating the entry-->
+    <form id="item-form">
+      <div>
+        <label class="fullWidth" for="item-name">Name:</label>
+        <input type="text" id="item-name" name="item-name" required />
+      </div>
+      <div>
+        <label class="fullWidth" for="item-description">Description:</label>
+        <textarea
+          id="item-description"
+          name="item-description"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Storage Type dropdown -->
+      <div class="form-row">
+        <div class="storage-type">
+          <label for="item-storage-type">Storage Type:</label>
+          <select id="item-storage-type" name="item-storage-type" required>
+            <option value="fridge">Fridge</option>
+            <option value="freezer">Freezer</option>
+            <option value="pantry">Pantry</option>
+          </select>
+        </div>
+        <!-- Date Stored and Use By Date fields -->
+        <div class="date-fields">
+          <div>
+            <label for="dateStored">Date Added To Storage:</label>
+            <input type="date" id="dateStored" name="dateStored" required />
+          </div>
+          <div>
+            <label for="useByDate">Use By Date:</label>
+            <input type="date" id="useByDate" name="useByDate" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Add Item</button>
+        <button
+          type="button"
+          id="cancel-btn"
+          onclick="cancelEdit()"
+          style="display: none"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+
+    <!-- Display Food Storage Items -->
+    <div id="foodList">
+      <h2>Stored Food Items</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Storage Type</th>
+            <th>Date Stored</th>
+            <th>Use By Date</th>
+            <th>Days Left</th>
+          </tr>
+        </thead>
+        <tbody id="item-table-body"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

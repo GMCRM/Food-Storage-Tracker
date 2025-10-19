@@ -1,0 +1,178 @@
+/* Variables */
+:root {
+  --primary-color: lightblue;
+  --secondary-color: #f9f9f9;
+  --border-color: #ccc;
+}
+
+/* CSS Styles */
+body {
+  font-family: Cochin, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+form {
+  width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  text-align: center;
+}
+
+#items {
+  width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: white;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  background-color: var(--secondary-color);
+}
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: white;
+  color: black;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+button:hover {
+  background-color: darkgreen;
+}
+
+/* Make form simple and symmetrical */
+form {
+  margin: 40px auto;
+  padding: 24px 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Style for individual form fields */
+form > div:not(.form-row) {
+  width: 100%;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Cochin, sans-serif;
+}
+form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Remove the min-width and max-width constraints for Name and Description */
+form > div:not(.form-row) input,
+form > div:not(.form-row) select,
+form > div:not(.form-row) textarea {
+  min-width: unset;
+  max-width: unset;
+}
+
+/* Keep constraints only for form-row elements */
+.form-row input,
+.form-row select {
+  min-width: 120px;
+}
+
+.fullWidth {
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+/* Form buttons container */
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+form button {
+  width: auto;
+  min-width: 120px;
+  padding: 10px 24px;
+}
+
+#cancel-btn {
+  background-color: #757575;
+}
+
+#cancel-btn:hover {
+  background-color: #555;
+}
+
+/* Arrange storage type, date added, and use by in a row */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+.form-row > .storage-type {
+  flex: 1 1 40%;
+  text-align: left;
+}
+.form-row > .date-fields {
+  display: flex;
+  flex-direction: column;
+  flex: 2 1 60%;
+  gap: 16px;
+  justify-content: flex-end;
+}
+.form-row > .date-fields > * {
+  min-width: 120px;
+}
